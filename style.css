@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Zerando CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+
+/* Fundo-tela */
+
+html {
+    width: 100vw;
+    height: 100vh;
+    font-size: 62.5%;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(20, 20, 20, 0.5)), url('./img/img3.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-position-y: 0px;
+    background-repeat: no-repeat;
+}
+
+/* Menu - Header - NavBar */
+
+header {
+    width: 100%;
+    height: 7vh;
+    background: rgba(22, 22, 22, 0.2);
+}
+.than{
+    color: rgba(251, 255, 0, 0.8);;
+}
+
+
+
+#menu {
+    text-transform: uppercase;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    letter-spacing: 0.4rem;
+    cursor: pointer;
+}
+.infinity{
+    font-size: 2.5rem;
+    color: rgba(251, 255, 0, 0.8);
+}
+
+#menu .list-items {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+#menu .list-items a {
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem;
+    transform: 2ms ease-in;
+    position: relative;
+}
+
+#menu .list-items a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgb(251, 255, 0);
+    transition: all 1.5s ease;
+}
+
+#menu .list-items a:hover:before {
+    width: 100%;
+}
+
+/* Centro - Conteudo Principal */
+
+main {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Textos conteudo principal */
+
+.primary-text {
+    width: 850px;
+    font-size: 5rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.second-text {
+    margin-bottom: 7rem;
+    font-size: 2rem;
+    color: rgb(165, 165, 165);
+    text-transform: uppercase;
+}
+
+/*  Botões */
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btns button {
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    border-radius: 20px;
+    position: relative;
+    transition: 1.5s;
+}
+
+.btns button:hover {
+    color: rgb(251, 255, 0);
+    border: none;
+}
+
+.btns button:before {
+    content: ' ';
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 60px;
+    background-color: rgb(61, 61, 61);
+    z-index: -1;
+    transition: 1s;
+}
+
+
+
+.btns button:hover:before {
+    width: 100%;
+}
+
+
+
+/* Responsivo */
+#btn-menu {
+    display: none;
+}
+#mobile{
+    display: none;
+}
+
+.author {
+    display: none;
+}
+
+@media (max-width: 1210px) {
+    #btn-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 25px;
+
+    }
+
+    #menu .list-items {
+        display: block;
+        position: absolute;
+        width: 21, 5%;
+        top: 7%;
+        right: 0px;
+        height: 0px;
+        font-size: 2rem;
+        transition: .9s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+        background-color: rgba(17, 17, 17, 0.3);
+        text-align: right
+    }
+
+    #menu .list-items .option {
+        padding: 8px;
+        border-bottom: 1px solid;
+
+    }
+
+    #menu .list-items .option:hover {
+        background-color: rgba(200, 200, 200, 0.2);
+    }
+
+    #menu .list-items .contact {
+        display: inline-block;
+        border: 1px solid;
+
+
+    }
+
+    #menu.active .list-items {
+        height: calc(100vh - 54px);
+        visibility: visible;
+    }
+
+    .primary-text {
+        width: 500px;
+        font-size: 5rem;
+        margin-bottom: 3.5rem;
+        text-align: center;
+    }
+
+    .btns button {
+        width: 240px;
+        height: 60px;
+    }
+
+    #menu .list-items a:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0px;
+        background-color: rgb(251, 255, 0);
+        transition: all 1.5s ease;
+    }
+
+    .author {
+        display: block;
+        margin-top: 600px;
+        text-transform: capitalize;
+        text-align: center;
+        color: rgb(251, 255, 0);
+
+    }
+
+
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .primary-text {
+        width: 500px;
+        font-size: 4rem;
+        margin-bottom: 10rem;
+        text-align: center;
+    }
+
+    .second-text {
+        margin-bottom: 8rem;
+        font-size: 1.8rem;
+        color: rgb(165, 165, 165);
+        text-transform: uppercase;
+    }
+
+    body {
+        background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(20, 20, 20, 0.5)), url('../img/img3.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-position-y: 0px;
+        background-repeat: no-repeat;
+
+    }
+
+    .btns button {
+        width: 150px;
+        height: 60px;
+        cursor: pointer;
+        border: 1px solid white;
+        color: white;
+        text-transform: uppercase;
+        background-color: transparent;
+        font-weight: bold;
+        letter-spacing: 0.3rem;
+        border-radius: 20px;
+        position: relative;
+        transition: 1.5s;
+    }
+}
+
+
+
+@media (max-width: 414px) {
+    #desktop{
+        display:none;
+    }
+    #mobile{
+        display: block;
+    }
+    .primary-text {
+        width: 250px;
+        font-size: 3rem;
+        margin-bottom: 5rem;
+        text-align: center;
+    }
+
+    .second-text {
+        margin-bottom: 8rem;
+        font-size: 1.3rem;
+        color: rgb(165, 165, 165);
+        text-transform: uppercase;
+    }
+
+    body {
+        background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(20, 20, 20, 0.5)), url('./img/mobile.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-position-y: 0px;
+        background-repeat: no-repeat;
+
+    }
+
+    .btns button {
+        width: 120px;
+        height: 100px;
+        cursor: pointer;
+        border: 1px solid white;
+        color: white;
+        text-transform: uppercase;
+        background-color: transparent;
+        font-weight: bold;
+        letter-spacing: 0.3rem;
+        border-radius: 20px;
+        position: relative;
+        transition: 1.5s;
+    }
+
+    #menu .list-items {
+        background-color: rgba(17, 17, 17, 0.9);
+        top: 7.5%
+    }
+
+    .logo {
+        font-size: 0.9rem;
+        letter-spacing: 0.4rem;
+        cursor: pointer;
+    }
+
+    .btns button:hover {
+        color: rgb(251, 255, 0);
+        border: none;
+    }
+    
+    .btns button:before {
+        content: ' ';
+        border-radius: 20px;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 0;
+        height: 100px;
+        background-color: rgb(61, 61, 61);
+        z-index: -1;
+        transition: 1s;
+    }
+    .author {
+        display: block;
+        margin-top: 500px;
+        text-transform: capitalize;
+        text-align: center;
+        color: rgb(251, 255, 0);
+        font-size: 12px;
+
+    }
+}
+
+@media (max-width: 280px) {
+    .author {
+        display: block;
+        margin-top: 350px;
+        text-transform: capitalize;
+        text-align: center;
+        color: rgb(251, 255, 0);
+        font-size: 12px;
+
+    }
+    .second-text {
+        margin-bottom: 8rem;
+        font-size: 1rem;
+        color: rgb(165, 165, 165);
+        text-transform: uppercase;
+    }
+}
