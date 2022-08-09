@@ -1,3 +1,3 @@
 # Academia Impact 
 
-Layout Responsivo
+Landing Page com Layout Responsivo
